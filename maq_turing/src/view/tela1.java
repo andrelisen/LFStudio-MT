@@ -27,21 +27,91 @@ public class tela1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnNovaMaq = new javax.swing.JButton();
+        btnImpMaq = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("LF-Studio");
+        setBackground(new java.awt.Color(70, 71, 74));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1024, 600));
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(70, 71, 74));
+        jPanel1.setToolTipText("Tela inicial");
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1034, 600));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1034, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1034, 600));
+
+        jLabel1.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(196, 196, 196));
+        jLabel1.setText("MÁQUINA DE TURING");
+        jLabel1.setFocusable(false);
+
+        btnNovaMaq.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 16)); // NOI18N
+        btnNovaMaq.setForeground(new java.awt.Color(196, 196, 196));
+        btnNovaMaq.setText("Nova máquina");
+        btnNovaMaq.setBorderPainted(false);
+        btnNovaMaq.setContentAreaFilled(false);
+        btnNovaMaq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovaMaqActionPerformed(evt);
+            }
+        });
+
+        btnImpMaq.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 16)); // NOI18N
+        btnImpMaq.setForeground(new java.awt.Color(196, 196, 196));
+        btnImpMaq.setText("Importar máquina");
+        btnImpMaq.setBorderPainted(false);
+        btnImpMaq.setContentAreaFilled(false);
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(336, 336, 336)
+                .add(jLabel1)
+                .addContainerGap(361, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(btnImpMaq)
+                    .add(btnNovaMaq))
+                .add(397, 397, 397))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(129, 129, 129)
+                .add(jLabel1)
+                .add(108, 108, 108)
+                .add(btnNovaMaq)
+                .add(18, 18, 18)
+                .add(btnImpMaq)
+                .addContainerGap(220, Short.MAX_VALUE))
+        );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 400, Short.MAX_VALUE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 300, Short.MAX_VALUE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNovaMaqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaMaqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNovaMaqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +149,9 @@ public class tela1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnImpMaq;
+    private javax.swing.JButton btnNovaMaq;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
