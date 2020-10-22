@@ -92,11 +92,11 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(btnRetornar)
                 .addGap(79, 79, 79)
                 .addComponent(labelMT)
-                .addGap(192, 192, 192)
+                .addGap(162, 162, 162)
                 .addComponent(btnNovaMT)
                 .addGap(29, 29, 29)
                 .addComponent(btnImportMT)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
