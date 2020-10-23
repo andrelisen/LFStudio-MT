@@ -115,6 +115,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void btnNovaMTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaMTActionPerformed
         // TODO add your handling code here:
+        new TelaConfig().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnNovaMTActionPerformed
 
     /**
