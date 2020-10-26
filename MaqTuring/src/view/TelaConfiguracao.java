@@ -9,12 +9,12 @@ package view;
  *
  * @author andrelise
  */
-public class TelaInicial extends javax.swing.JFrame {
+public class TelaConfiguracao extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaInicial
+     * Creates new form TelaConfiguracao
      */
-    public TelaInicial() {
+    public TelaConfiguracao() {
         initComponents();
         setLocationRelativeTo(null); 
     }
@@ -29,10 +29,10 @@ public class TelaInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         telaInternaPrinc = new javax.swing.JPanel();
-        txtTitulo = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
-        btnNova = new javax.swing.JButton();
-        btnImportar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnSalvar = new javax.swing.JButton();
+        btnExec = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 700));
@@ -44,74 +44,68 @@ public class TelaInicial extends javax.swing.JFrame {
         telaInternaPrinc.setBackground(new java.awt.Color(70, 71, 74));
         telaInternaPrinc.setMaximumSize(new java.awt.Dimension(1024, 700));
         telaInternaPrinc.setMinimumSize(new java.awt.Dimension(1024, 700));
-
-        txtTitulo.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 86)); // NOI18N
-        txtTitulo.setForeground(new java.awt.Color(196, 196, 196));
-        txtTitulo.setText("MÁQUINA DE TURING");
+        telaInternaPrinc.setPreferredSize(new java.awt.Dimension(1024, 700));
 
         btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_keyboard_backspace_white_24dp.png"))); // NOI18N
         btnVoltar.setBorderPainted(false);
         btnVoltar.setContentAreaFilled(false);
 
-        btnNova.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 42)); // NOI18N
-        btnNova.setForeground(new java.awt.Color(196, 196, 196));
-        btnNova.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_add_white_18dp.png"))); // NOI18N
-        btnNova.setText("  Nova Máquina");
-        btnNova.setBorderPainted(false);
-        btnNova.setContentAreaFilled(false);
+        jLabel1.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(196, 196, 196));
+        jLabel1.setText("CONFIGURAÇÃO DA MÁQUINA DE TURING");
 
-        btnImportar.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 42)); // NOI18N
-        btnImportar.setForeground(new java.awt.Color(196, 196, 196));
-        btnImportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_system_update_alt_white_18dp.png"))); // NOI18N
-        btnImportar.setText("  Importar Máquina");
-        btnImportar.setBorderPainted(false);
-        btnImportar.setContentAreaFilled(false);
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_save_white_24dp.png"))); // NOI18N
+        btnSalvar.setBorderPainted(false);
+        btnSalvar.setContentAreaFilled(false);
+
+        btnExec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_arrow_forward_white_24dp.png"))); // NOI18N
+        btnExec.setBorderPainted(false);
+        btnExec.setContentAreaFilled(false);
 
         javax.swing.GroupLayout telaInternaPrincLayout = new javax.swing.GroupLayout(telaInternaPrinc);
         telaInternaPrinc.setLayout(telaInternaPrincLayout);
         telaInternaPrincLayout.setHorizontalGroup(
             telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(btnVoltar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
-                        .addGap(0, 231, Short.MAX_VALUE)
-                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
-                                .addComponent(txtTitulo)
-                                .addGap(188, 188, 188))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
-                                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnImportar)
-                                    .addComponent(btnNova))
-                                .addGap(337, 337, 337))))))
+                .addGap(24, 24, 24)
+                .addComponent(btnVoltar)
+                .addGap(134, 134, 134)
+                .addComponent(jLabel1)
+                .addContainerGap(165, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalvar)
+                .addGap(18, 18, 18)
+                .addComponent(btnExec)
+                .addGap(39, 39, 39))
         );
         telaInternaPrincLayout.setVerticalGroup(
             telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(btnVoltar)
-                .addGap(18, 18, 18)
-                .addComponent(txtTitulo)
-                .addGap(91, 91, 91)
-                .addComponent(btnNova)
-                .addGap(51, 51, 51)
-                .addComponent(btnImportar)
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnVoltar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 523, Short.MAX_VALUE)
+                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnExec))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaInternaPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(telaInternaPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaInternaPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(telaInternaPrinc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -134,29 +128,29 @@ public class TelaInicial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfiguracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfiguracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfiguracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConfiguracao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicial().setVisible(true);
+                new TelaConfiguracao().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnImportar;
-    private javax.swing.JButton btnNova;
+    private javax.swing.JButton btnExec;
+    private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel telaInternaPrinc;
-    private javax.swing.JLabel txtTitulo;
     // End of variables declaration//GEN-END:variables
 }
