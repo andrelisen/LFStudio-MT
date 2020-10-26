@@ -16,6 +16,7 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -37,7 +38,6 @@ public class TelaInicial extends javax.swing.JFrame {
         setTitle("LF-Studio");
         setMaximumSize(new java.awt.Dimension(1024, 680));
         setMinimumSize(new java.awt.Dimension(1024, 680));
-        setPreferredSize(new java.awt.Dimension(1024, 680));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(70, 71, 74));

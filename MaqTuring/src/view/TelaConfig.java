@@ -16,6 +16,7 @@ public class TelaConfig extends javax.swing.JFrame {
      */
     public TelaConfig() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
