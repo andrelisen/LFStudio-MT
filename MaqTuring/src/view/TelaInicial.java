@@ -59,6 +59,11 @@ public class TelaInicial extends javax.swing.JFrame {
         btnNova.setText("  Nova Máquina");
         btnNova.setBorderPainted(false);
         btnNova.setContentAreaFilled(false);
+        btnNova.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovaActionPerformed(evt);
+            }
+        });
 
         btnImportar.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 42)); // NOI18N
         btnImportar.setForeground(new java.awt.Color(196, 196, 196));
@@ -116,6 +121,12 @@ public class TelaInicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaActionPerformed
+        // TODO add your handling code here:
+        new TelaConfiguracao().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnNovaActionPerformed
 
     /**
      * @param args the command line arguments
