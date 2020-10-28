@@ -58,7 +58,7 @@ public class TelaExecucao extends javax.swing.JFrame {
             .addGroup(telaInternaPrincLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(btnVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(185, 185, 185))
         );
@@ -69,7 +69,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(btnVoltar))
-                .addContainerGap(622, Short.MAX_VALUE))
+                .addContainerGap(617, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
