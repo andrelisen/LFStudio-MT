@@ -75,6 +75,11 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_keyboard_backspace_white_24dp.png"))); // NOI18N
         btnVoltar.setBorderPainted(false);
         btnVoltar.setContentAreaFilled(false);
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(196, 196, 196));
@@ -87,6 +92,11 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         btnExec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_arrow_forward_white_24dp.png"))); // NOI18N
         btnExec.setBorderPainted(false);
         btnExec.setContentAreaFilled(false);
+        btnExec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExecActionPerformed(evt);
+            }
+        });
 
         estadoInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,6 +377,18 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     private void estadoInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoInicialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_estadoInicialActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+        new TelaInicial().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnExecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecActionPerformed
+        // TODO add your handling code here:
+        new TelaExecucao().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnExecActionPerformed
 
     /**
      * @param args the command line arguments
