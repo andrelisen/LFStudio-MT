@@ -5,6 +5,10 @@
  */
 package view;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+import maquina_turing.Reconhecer;
+
 /**
  *
  * @author andrelise
@@ -31,7 +35,7 @@ public class TelaExecucao extends javax.swing.JFrame {
         telaInternaPrinc = new javax.swing.JPanel();
         btnVoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputPalavra = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -180,6 +184,11 @@ public class TelaExecucao extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jPanel1);
 
         jToggleButton1.setText("CARREGAR ENTRADA");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(193, 193, 193));
@@ -187,6 +196,11 @@ public class TelaExecucao extends javax.swing.JFrame {
         jLabel13.setText("Palavra");
 
         jToggleButton2.setText("EXECUÇÃO PASSO A PASSO");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout telaInternaPrincLayout = new javax.swing.GroupLayout(telaInternaPrinc);
         telaInternaPrinc.setLayout(telaInternaPrincLayout);
@@ -212,7 +226,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                         .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jToggleButton1)
-                                .addComponent(jTextField1)
+                                .addComponent(inputPalavra)
                                 .addComponent(jScrollPane1))
                             .addComponent(jToggleButton2)))
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
@@ -220,7 +234,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                         .addComponent(btnVoltar)
                         .addGap(296, 296, 296)
                         .addComponent(jLabel1)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         telaInternaPrincLayout.setVerticalGroup(
             telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +246,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -253,7 +267,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -302,6 +316,26 @@ public class TelaExecucao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_movimentoActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        boolean leitura;
+        Reconhecer maquinadeTuring = new Reconhecer();
+        ArrayList<String> config = new ArrayList<>();
+        
+        String palavra = inputPalavra.getText();
+        
+        leitura = maquinadeTuring.reconhecer(palavra, config);
+
+        if (leitura == true) {
+            System.out.println("Palavra reconhecida");
+        } else {
+            System.out.println("Palavra não reconhecida");
+        }
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -340,6 +374,7 @@ public class TelaExecucao extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltar;
     private javax.swing.JTextField estadoAtual;
+    private javax.swing.JTextField inputPalavra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -350,7 +385,6 @@ public class TelaExecucao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

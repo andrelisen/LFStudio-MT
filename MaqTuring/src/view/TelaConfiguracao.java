@@ -407,6 +407,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_btnSalvarMouseClicked
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed

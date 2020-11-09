@@ -94,7 +94,7 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="inputPalavra" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -122,7 +122,7 @@
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel13" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="inputPalavra" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="jToggleButton1" min="-2" pref="39" max="-2" attributes="0"/>
@@ -147,7 +147,7 @@
                           <Component id="jToggleButton2" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="57" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -176,7 +176,7 @@
             <Property name="text" type="java.lang.String" value="EXECU&#xc7;&#xc3;O DA M&#xc1;QUINA DE TURING"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="inputPalavra">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
@@ -350,6 +350,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="CARREGAR ENTRADA"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
@@ -367,6 +370,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="EXECU&#xc7;&#xc3;O PASSO A PASSO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
