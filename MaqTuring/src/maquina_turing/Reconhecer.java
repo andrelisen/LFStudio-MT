@@ -64,7 +64,7 @@ public class Reconhecer {
 				if (tr.getDe().equals(estado) && tr.getLido().equals(String.valueOf(fita[cabecote]))) {
 					transicaoaux = tr;
 					encerrar = true;
-					config.add(tr.getDe() + "," + String.valueOf(fita[cabecote]) + ",D," + transicaoaux.getPara());
+					config.add(tr.getDe() + "," + tr.getLido() + "," + String.valueOf(fita[cabecote]) + ",D," + transicaoaux.getPara());
 				}
 				aux++;
 			}
