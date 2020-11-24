@@ -93,11 +93,11 @@
                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="carregaEntrada" min="-2" max="-2" attributes="0"/>
                                   <Component id="inputPalavra" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="executar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -107,7 +107,7 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="79" max="32767" attributes="0"/>
+                  <EmptySpace pref="403" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -125,7 +125,7 @@
                       <Component id="inputPalavra" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="jToggleButton1" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="carregaEntrada" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -144,10 +144,10 @@
                       <Group type="102" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="309" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jToggleButton2" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="executar" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                  <EmptySpace pref="57" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -204,7 +204,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="tabelaExec">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="1">
@@ -221,12 +221,12 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="carregaEntrada">
           <Properties>
             <Property name="text" type="java.lang.String" value="CARREGAR ENTRADA"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carregaEntradaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
@@ -241,12 +241,12 @@
             <Property name="text" type="java.lang.String" value="Palavra"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+        <Component class="javax.swing.JToggleButton" name="executar">
           <Properties>
             <Property name="text" type="java.lang.String" value="EXECU&#xc7;&#xc3;O PASSO A PASSO"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="executarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

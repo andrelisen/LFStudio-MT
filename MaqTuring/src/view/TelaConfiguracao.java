@@ -23,7 +23,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
      */
     public TelaConfiguracao() {
         initComponents();
-        model1 = (DefaultTableModel) jTable1.getModel();
+        model1 = (DefaultTableModel) tabelaTrans.getModel();
         setLocationRelativeTo(null); 
     }
     
@@ -55,7 +55,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaTrans = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
@@ -161,7 +161,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Funções de transições");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaTrans.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -177,9 +177,9 @@ public class TelaConfiguracao extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setAutoscrolls(false);
-        jTable1.setEditingRow(1);
-        jScrollPane1.setViewportView(jTable1);
+        tabelaTrans.setAutoscrolls(false);
+        tabelaTrans.setEditingRow(1);
+        jScrollPane1.setViewportView(tabelaTrans);
 
         jButton1.setText("+");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -301,7 +301,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
                     .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(estadoInicial, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel13)))
                     .addComponent(estadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -377,8 +377,21 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     private void btnExecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecActionPerformed
         // TODO add your handling code here:
+        
+        String conjuntoEstados = conjEstados.getText();
+        String simbAlfabeto = alfabeto.getText();
+        String eInicial = estadoInicial.getText();
+        String eFinal = estadoFinal.getText();
+        
+        System.out.println("Conjunto de estados: " + conjuntoEstados);
+        System.out.println("Alfabeto: " + simbAlfabeto);
+        System.out.println("Estado inicial: " + eInicial);
+        System.out.println("Estado final: " + eFinal);
+        
         new TelaExecucao().setVisible(true);
         this.setVisible(false);
+        
+        
     }//GEN-LAST:event_btnExecActionPerformed
 
     private void btnSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseClicked
@@ -457,22 +470,14 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alfabeto;
-    private javax.swing.JTextField alfabeto1;
     private javax.swing.JButton btnExec;
-    private javax.swing.JButton btnExec1;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnSalvar1;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JButton btnVoltar1;
     private javax.swing.JTextField conjEstados;
-    private javax.swing.JTextField conjEstados1;
     private javax.swing.JTextField estadoFinal;
     private javax.swing.JTextField estadoInicial;
-    private javax.swing.JTextField estadoInicial1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -480,24 +485,12 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tabelaTrans;
     private javax.swing.JPanel telaInternaPrinc;
-    private javax.swing.JPanel telaInternaPrinc1;
     // End of variables declaration//GEN-END:variables
 }

@@ -46,10 +46,10 @@ public class TelaExecucao extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tabelaExec = new javax.swing.JTable();
+        carregaEntrada = new javax.swing.JToggleButton();
         jLabel13 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        executar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 700));
@@ -80,7 +80,7 @@ public class TelaExecucao extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Entrada");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaExec.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -96,14 +96,14 @@ public class TelaExecucao extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setAutoscrolls(false);
-        jTable1.setEditingRow(1);
-        jScrollPane1.setViewportView(jTable1);
+        tabelaExec.setAutoscrolls(false);
+        tabelaExec.setEditingRow(1);
+        jScrollPane1.setViewportView(tabelaExec);
 
-        jToggleButton1.setText("CARREGAR ENTRADA");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        carregaEntrada.setText("CARREGAR ENTRADA");
+        carregaEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                carregaEntradaActionPerformed(evt);
             }
         });
 
@@ -112,10 +112,10 @@ public class TelaExecucao extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Palavra");
 
-        jToggleButton2.setText("EXECUÇÃO PASSO A PASSO");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        executar.setText("EXECUÇÃO PASSO A PASSO");
+        executar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                executarActionPerformed(evt);
             }
         });
 
@@ -142,16 +142,16 @@ public class TelaExecucao extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jToggleButton1)
+                                .addComponent(carregaEntrada)
                                 .addComponent(inputPalavra)
                                 .addComponent(jScrollPane1))
-                            .addComponent(jToggleButton2)))
+                            .addComponent(executar)))
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(btnVoltar)
                         .addGap(296, 296, 296)
                         .addComponent(jLabel1)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         telaInternaPrincLayout.setVerticalGroup(
             telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +165,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(carregaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
@@ -183,8 +183,8 @@ public class TelaExecucao extends javax.swing.JFrame {
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addComponent(executar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -213,11 +213,11 @@ public class TelaExecucao extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void carregaEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carregaEntradaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_carregaEntradaActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void executarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_executarActionPerformed
         boolean leitura;
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
@@ -232,7 +232,7 @@ public class TelaExecucao extends javax.swing.JFrame {
             System.out.println("Palavra não reconhecida");
         }
         
-        model1 = (DefaultTableModel) jTable1.getModel();
+        model1 = (DefaultTableModel) tabelaExec.getModel();
 
         for (int i = 0; i < config.size(); i++) {
             String row[] = config.get(i).split(",");
@@ -245,7 +245,7 @@ public class TelaExecucao extends javax.swing.JFrame {
             });
         }
         
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_executarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,19 +284,19 @@ public class TelaExecucao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JToggleButton carregaEntrada;
+    private javax.swing.JToggleButton executar;
     private javax.swing.JTextField inputPalavra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JTable tabelaExec;
     private javax.swing.JPanel telaInternaPrinc;
     // End of variables declaration//GEN-END:variables
 }
