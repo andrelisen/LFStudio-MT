@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author andrelise
@@ -71,6 +73,11 @@ public class TelaInicial extends javax.swing.JFrame {
         btnImportar.setText("  Importar Máquina");
         btnImportar.setBorderPainted(false);
         btnImportar.setContentAreaFilled(false);
+        btnImportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImportarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout telaInternaPrincLayout = new javax.swing.GroupLayout(telaInternaPrinc);
         telaInternaPrinc.setLayout(telaInternaPrincLayout);
@@ -127,6 +134,13 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaConfiguracao().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnNovaActionPerformed
+
+    private void btnImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportarActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        
+        fileChooser.showOpenDialog(null);
+    }//GEN-LAST:event_btnImportarActionPerformed
 
     /**
      * @param args the command line arguments

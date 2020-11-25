@@ -93,6 +93,11 @@ public class TelaConfiguracao extends javax.swing.JFrame {
                 btnSalvarMouseClicked(evt);
             }
         });
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnExec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/baseline_arrow_forward_white_24dp.png"))); // NOI18N
         btnExec.setBorderPainted(false);
@@ -432,6 +437,11 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     private void estadoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoFinalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_estadoFinalActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
