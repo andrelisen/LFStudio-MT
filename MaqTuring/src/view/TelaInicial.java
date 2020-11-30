@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.io.File;
 import javax.swing.JFileChooser;
 
 /**
@@ -139,7 +140,13 @@ public class TelaInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         
-        fileChooser.showOpenDialog(null);
+        
+        int response = fileChooser.showOpenDialog(null);//select file to open
+        
+        if(response == JFileChooser.APPROVE_OPTION){
+            File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+            System.out.println(file);
+        }
     }//GEN-LAST:event_btnImportarActionPerformed
 
     /**

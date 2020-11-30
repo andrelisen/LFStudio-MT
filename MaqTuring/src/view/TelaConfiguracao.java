@@ -5,6 +5,8 @@
  */
 package view;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -440,6 +442,26 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
+        String filePath = "C:\\Users\\marco\\Documents\\NetBeansProjects\\LFStudio-MT\\MaqTuring\\txtSalvo.txt";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            
+            BufferedWriter bw = new  BufferedWriter(fw);
+            
+            for(int i = 0;i < tabelaTrans.getRowCount();i++){
+                for(int j = 0;j < tabelaTrans.getColumnCount();j++){
+                    bw.write(tabelaTrans.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 
