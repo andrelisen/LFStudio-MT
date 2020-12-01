@@ -244,7 +244,6 @@ public class TelaExecucao extends javax.swing.JFrame {
                 row[3],
             });
         }
-        
     }//GEN-LAST:event_executarActionPerformed
 
     /**
