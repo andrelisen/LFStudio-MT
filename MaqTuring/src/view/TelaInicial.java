@@ -146,7 +146,12 @@ public class TelaInicial extends javax.swing.JFrame {
         if(response == JFileChooser.APPROVE_OPTION){
             File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
             System.out.println(file);
+            
+            new TelaExecucao(file.toString()).setVisible(true);
+            this.setVisible(false);
         }
+        
+        
     }//GEN-LAST:event_btnImportarActionPerformed
 
     /**
