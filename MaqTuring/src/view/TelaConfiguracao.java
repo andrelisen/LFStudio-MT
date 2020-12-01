@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -403,9 +406,20 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     private void btnSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseClicked
         // TODO add your handling code here:
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
         FileWriter arq;
         try {
-            arq = new FileWriter("linguagem.txt", true);
+            arq = new FileWriter(fileChooser.getSelectedFile(), true);
             PrintWriter gravarArq = new PrintWriter(arq);
             
             //System.out.println(estadoInicial.getText());
