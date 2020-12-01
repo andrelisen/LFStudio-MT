@@ -426,8 +426,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
             //System.out.println(estadoFinal.getText());
             
             gravarArq.print(estadoInicial.getText() + "\n");
-            gravarArq.print(estadoFinal.getText() + "\n");
-            
+            gravarArq.print(estadoFinal.getText());
             
             gravarArq.print("\n_\n%\n\n");
             

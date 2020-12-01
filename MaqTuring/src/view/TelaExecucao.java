@@ -7,6 +7,8 @@ package view;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import maquina_turing.Reconhecer;
@@ -220,10 +222,21 @@ public class TelaExecucao extends javax.swing.JFrame {
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
         
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showOpenDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
         String palavra = inputPalavra.getText();
         
         if(initPassoAPAsso == false){
-            leitura = maquinadeTuring.reconhecer(palavra, config);
+            leitura = maquinadeTuring.reconhecer(palavra, config,fileChooser.getSelectedFile().toString());
             initPassoAPAsso=true;
         }
         
@@ -253,9 +266,20 @@ public class TelaExecucao extends javax.swing.JFrame {
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
         
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showOpenDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
         String palavra = inputPalavra.getText();
         
-        leitura = maquinadeTuring.reconhecer(palavra, config);
+        leitura = maquinadeTuring.reconhecer(palavra, config,fileChooser.getSelectedFile().toString());
         
         if (leitura == true) {
             System.out.println("Palavra reconhecida");

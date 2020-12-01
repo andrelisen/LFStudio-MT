@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Reconhecer {
 
-	public boolean reconhecer(String palavra, ArrayList<String> config) {
+	public boolean reconhecer(String palavra, ArrayList<String> config,String path) {
 
 		boolean reconhece = false;
 
 		ArrayList<Transicao> listaTransicao = new ArrayList<>();
 
 		// caminho para leitura do arquivo de configuração da máquina
-		ArrayList<String> arquivo = Arquivo.lerArquivo("/home/mateus/Documentos/LFStudio-MT/MaqTuring/src/maquina_turing/transicoes.txt/");
+		ArrayList<String> arquivo = Arquivo.lerArquivo(path);
 
 		Maquina maquinadeTuring = new Maquina();
 
