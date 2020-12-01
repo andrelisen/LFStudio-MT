@@ -7,6 +7,9 @@ package view;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import maquina_turing.Reconhecer;
 
@@ -17,6 +20,7 @@ import maquina_turing.Reconhecer;
 public class TelaExecucao extends javax.swing.JFrame {
     
     public DefaultTableModel model1;
+    public int indexPassoApasso= 0;
 
     /**
      * Creates new form TelaExecucao
@@ -151,7 +155,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                         .addComponent(btnVoltar)
                         .addGap(296, 296, 296)
                         .addComponent(jLabel1)))
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         telaInternaPrincLayout.setVerticalGroup(
             telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +188,7 @@ public class TelaExecucao extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(executar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,17 +218,27 @@ public class TelaExecucao extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void carregaEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carregaEntradaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_carregaEntradaActionPerformed
-
-    private void executarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_executarActionPerformed
-        boolean leitura;
+     boolean leitura=false,initPassoAPAsso=false;
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
         
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showOpenDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
         String palavra = inputPalavra.getText();
         
-        leitura = maquinadeTuring.reconhecer(palavra, config);
+        if(initPassoAPAsso == false){
+            leitura = maquinadeTuring.reconhecer(palavra, config,fileChooser.getSelectedFile().toString());
+            initPassoAPAsso=true;
+        }
         
         if (leitura == true) {
             System.out.println("Palavra reconhecida");
@@ -244,6 +258,51 @@ public class TelaExecucao extends javax.swing.JFrame {
                 row[3],
             });
         }
+      
+    }//GEN-LAST:event_carregaEntradaActionPerformed
+
+    private void executarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_executarActionPerformed
+         boolean leitura;
+        Reconhecer maquinadeTuring = new Reconhecer();
+        ArrayList<String> config = new ArrayList<>();
+        
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showOpenDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
+        String palavra = inputPalavra.getText();
+        
+        leitura = maquinadeTuring.reconhecer(palavra, config,fileChooser.getSelectedFile().toString());
+        
+        if (leitura == true) {
+            System.out.println("Palavra reconhecida");
+        } else {
+            System.out.println("Palavra não reconhecida");
+        }
+        
+        model1 = (DefaultTableModel) tabelaExec.getModel();
+        if(indexPassoApasso < config.size()){
+            String row[] = config.get(indexPassoApasso).split(",");
+            model1.addRow(new Object[]{
+                row[0],
+                row[1],
+                row[4],
+                row[2],
+                row[3],
+            });
+            indexPassoApasso++;
+        }
+        else{
+            JOptionPane.showMessageDialog (null, "Máquina Terminou a computação", "Fim execução", JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_executarActionPerformed
 
     /**

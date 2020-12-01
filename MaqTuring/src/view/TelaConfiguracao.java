@@ -5,11 +5,16 @@
  */
 package view;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -108,6 +113,11 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         btnSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalvarMouseClicked(evt);
+            }
+        });
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
             }
         });
 
@@ -488,16 +498,28 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     private void btnSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseClicked
         // TODO add your handling code here:
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
         FileWriter arq;
         try {
-            arq = new FileWriter("linguagem.txt", true);
+            arq = new FileWriter(fileChooser.getSelectedFile(), true);
             PrintWriter gravarArq = new PrintWriter(arq);
 
             //System.out.println(estadoInicial.getText());
             //System.out.println(estadoFinal.getText());
             gravarArq.print(estadoInicial.getText() + "\n");
-            gravarArq.print(estadoFinal.getText() + "\n");
-
+           
+            gravarArq.print(estadoFinal.getText());
+            
             gravarArq.print("\n_\n%\n\n");
 
             for (int i = 0; i < model1.getRowCount(); i++) {
@@ -522,6 +544,31 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     private void estadoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoFinalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_estadoFinalActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+        String filePath = "C:\\Users\\marco\\Documents\\NetBeansProjects\\LFStudio-MT\\MaqTuring\\txtSalvo.txt";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            
+            BufferedWriter bw = new  BufferedWriter(fw);
+            
+            for(int i = 0;i < tabelaTrans.getRowCount();i++){
+                for(int j = 0;j < tabelaTrans.getColumnCount();j++){
+                    bw.write(tabelaTrans.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
