@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * @author andrelise
  */
 public class TelaConfiguracao extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TelaConfiguracao
      */
@@ -33,6 +33,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     }
     
     public DefaultTableModel model1;
+    public File pathFile;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -398,7 +399,43 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         System.out.println("Estado inicial: " + eInicial);
         System.out.println("Estado final: " + eFinal);
         
-        new TelaExecucao().setVisible(true);
+         // TODO add your handling code here:
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            pathFile=fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
+        FileWriter arq;
+        try {
+            arq = new FileWriter(pathFile, true);
+            PrintWriter gravarArq = new PrintWriter(arq);
+            
+            //System.out.println(estadoInicial.getText());
+            //System.out.println(estadoFinal.getText());
+            
+            gravarArq.print(estadoInicial.getText() + "\n");
+            gravarArq.print(estadoFinal.getText());
+            
+            gravarArq.print("\n_\n%\n\n");
+            
+            for(int i=0; i < model1.getRowCount(); i++){
+                for(int j=0; j < model1.getColumnCount(); j++){
+                    gravarArq.print(model1.getValueAt(i, j).toString() + ",");
+                }
+                gravarArq.print("\n");
+            }
+            arq.close();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        new TelaExecucao(pathFile.toString()).setVisible(true);
         this.setVisible(false);
         
         
@@ -413,13 +450,13 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         int userSelection = fileChooser.showSaveDialog(parentFrame);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            fileChooser.getSelectedFile();
+            pathFile=fileChooser.getSelectedFile();
            // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
         }
         
         FileWriter arq;
         try {
-            arq = new FileWriter(fileChooser.getSelectedFile(), true);
+            arq = new FileWriter(pathFile, true);
             PrintWriter gravarArq = new PrintWriter(arq);
             
             //System.out.println(estadoInicial.getText());
@@ -454,27 +491,6 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoFinalActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        // TODO add your handling code here:
-        String filePath = "C:\\Users\\marco\\Documents\\NetBeansProjects\\LFStudio-MT\\MaqTuring\\txtSalvo.txt";
-        File file = new File(filePath);
-        try {
-            FileWriter fw = new FileWriter(file);
-            
-            BufferedWriter bw = new  BufferedWriter(fw);
-            
-            for(int i = 0;i < tabelaTrans.getRowCount();i++){
-                for(int j = 0;j < tabelaTrans.getColumnCount();j++){
-                    bw.write(tabelaTrans.getValueAt(i, j).toString()+" ");
-                }
-                bw.newLine();
-            }
-            
-            bw.close();
-            fw.close();
-            
-        } catch (IOException ex) {
-            Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
     }//GEN-LAST:event_btnSalvarActionPerformed
 

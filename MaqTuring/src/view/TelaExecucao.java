@@ -21,12 +21,13 @@ public class TelaExecucao extends javax.swing.JFrame {
     
     public DefaultTableModel model1;
     public int indexPassoApasso= 0;
-
+    public String pathFile;
     /**
      * Creates new form TelaExecucao
      */
-    public TelaExecucao() {
+    public TelaExecucao(String pathFile) {
         initComponents();
+        this.pathFile = pathFile;
         setLocationRelativeTo(null); 
     }
 
@@ -222,21 +223,10 @@ public class TelaExecucao extends javax.swing.JFrame {
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
         
-        JFrame parentFrame = new JFrame();
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Specify a file to save");   
-
-        int userSelection = fileChooser.showOpenDialog(parentFrame);
-
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            fileChooser.getSelectedFile();
-           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-        }
-        
         String palavra = inputPalavra.getText();
         
         if(initPassoAPAsso == false){
-            leitura = maquinadeTuring.reconhecer(palavra, config,fileChooser.getSelectedFile().toString());
+            leitura = maquinadeTuring.reconhecer(palavra, config,pathFile);
             initPassoAPAsso=true;
         }
         
@@ -265,21 +255,10 @@ public class TelaExecucao extends javax.swing.JFrame {
          boolean leitura;
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
-        
-        JFrame parentFrame = new JFrame();
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Specify a file to save");   
-
-        int userSelection = fileChooser.showOpenDialog(parentFrame);
-
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            fileChooser.getSelectedFile();
-           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-        }
-        
+         
         String palavra = inputPalavra.getText();
         
-        leitura = maquinadeTuring.reconhecer(palavra, config,fileChooser.getSelectedFile().toString());
+        leitura = maquinadeTuring.reconhecer(palavra, config,pathFile);
         
         if (leitura == true) {
             System.out.println("Palavra reconhecida");
@@ -335,7 +314,7 @@ public class TelaExecucao extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaExecucao().setVisible(true);
+                //new TelaExecucao(pathFile).setVisible(true);
             }
         });
     }
