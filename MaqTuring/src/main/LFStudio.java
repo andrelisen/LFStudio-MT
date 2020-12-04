@@ -21,6 +21,9 @@ import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndProcessamentoPane
 import main.modulos.AutomatoFinitoPilha.screens.PilhaConfigPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaInicioPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
+import main.modulos.MaquinaTuring.screens.TuringInicioPanel;
+import main.modulos.MaquinaTuring.screens.TuringConfigPanel;
+import main.modulos.MaquinaTuring.screens.TuringProcessamentoPanel;
 /**
  *
  * @author thiag
@@ -37,6 +40,9 @@ public class LFStudio extends javax.swing.JFrame {
     PilhaInicioPanel pilhaInicioPanel;
     PilhaProcessamentoPanel pilhaProcessamentoPanel;
     PilhaConfigPanel pilhaConfigPanel;
+    TuringInicioPanel turingInicioPanel;
+    TuringProcessamentoPanel turingProcessamentoPanel;
+    TuringConfigPanel turingConfigPanel;
     
     Color defaultColor = null;
     
@@ -61,6 +67,13 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaExecucao.add(pilhaInicioPanel, "pilhaInicioPanel");
     }
     
+    void setTuringInicioPanel(){
+        turingInicioPanel =  new TuringInicioPanel(JanelaExecucao);
+        turingInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
+        turingInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(turingInicioPanel, "turingInicioPanel");
+    }
+    
     void setFndProcessamentoPanel(){
         fndProcessamentoPanel =  new FndProcessamentoPanel(JanelaExecucao);
         fndProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
@@ -83,6 +96,13 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaExecucao.add(pilhaProcessamentoPanel, "pilhaProcessamentoPanel");
     }
     
+        void setTuringProcessamentoPanel(){
+        turingProcessamentoPanel =  new TuringProcessamentoPanel(JanelaExecucao);
+        turingProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
+        turingProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(turingProcessamentoPanel, "turingProcessamentoPanel");
+    }
+    
     void setFndConfigPanel(){
         fndConfigPanel =  new FndConfigPanel(JanelaExecucao);
         fndConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
@@ -103,6 +123,13 @@ public class LFStudio extends javax.swing.JFrame {
         pilhaConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(pilhaConfigPanel, "pilhaConfigPanel");
     }
+    
+    void setTuringConfigPanel(){
+        turingConfigPanel =  new TuringConfigPanel(JanelaExecucao);
+        turingConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
+        turingConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(turingConfigPanel, "turingConfigPanel");
+    }
      
     void initPanels(){
         setFndInicioPanel();
@@ -114,6 +141,9 @@ public class LFStudio extends javax.swing.JFrame {
         setPilhaProcessamentoPanel();
         setPilhaConfigPanel();
         setPilhaInicioPanel();
+        setTuringInicioPanel();
+        setTuringConfigPanel();
+        setTuringProcessamentoPanel();
     }
     
     public LFStudio() {
@@ -380,6 +410,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
         menuTuring.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuTuringMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuTuringMouseEntered(evt);
             }
@@ -633,6 +666,10 @@ public class LFStudio extends javax.swing.JFrame {
     private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLFStudioMouseClicked
         cl.show(JanelaExecucao, "home");
     }//GEN-LAST:event_titleLFStudioMouseClicked
+
+    private void menuTuringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseClicked
+        cl.show(JanelaExecucao, "turingInicioPanel");
+    }//GEN-LAST:event_menuTuringMouseClicked
 
     /**
      * @param args the command line arguments
