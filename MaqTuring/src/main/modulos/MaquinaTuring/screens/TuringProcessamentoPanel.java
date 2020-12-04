@@ -15,7 +15,8 @@ import main.modulos.MaquinaTuring.domain.model.Reconhecer;
 
 /**
  *
- * @author michel
+ * @author andrelise
+ * @author thiagoleal
  */
 public class TuringProcessamentoPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
@@ -228,6 +229,10 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_inputPalavraKeyReleased
 
     private void carregaEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carregaEntradaActionPerformed
+        palavraReconhecida.setVisible(false);
+        palavraNReconhecida.setVisible(false);
+        erroPalavra.setVisible(false);
+    
         boolean leitura=false,initPassoAPAsso=false;
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();

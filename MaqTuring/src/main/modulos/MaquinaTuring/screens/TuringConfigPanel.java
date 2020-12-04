@@ -396,38 +396,73 @@ public class TuringConfigPanel extends javax.swing.JPanel {
     private void Turing_salvarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Turing_salvarBtnMouseClicked
         JFrame parentFrame = new JFrame();
         JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Specify a file to save");   
-
-        int userSelection = fileChooser.showSaveDialog(parentFrame);
-
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            pathFile=fileChooser.getSelectedFile();
-           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-        }
         
-        FileWriter arq;
-        try {
-            arq = new FileWriter(pathFile, true);
-            PrintWriter gravarArq = new PrintWriter(arq);
+        String conjuntoEstados = conjEstados.getText();
+        String simbAlfabeto = alfabeto.getText();
+        String eInicial = estadoInicial.getText();
+        String eFinal = estadoFinal.getText();
+        int tamTable = tabelaTrans.getRowCount();
 
-            //System.out.println(estadoInicial.getText());
-            //System.out.println(estadoFinal.getText());
-            gravarArq.print(estadoInicial.getText() + "\n");
-           
-            gravarArq.print(estadoFinal.getText());
-            
-            gravarArq.print("\n_\n%\n\n");
-
-            for (int i = 0; i < model1.getRowCount(); i++) {
-                for (int j = 0; j < model1.getColumnCount(); j++) {
-                    gravarArq.print(model1.getValueAt(i, j).toString() + ",");
-                }
-                gravarArq.print("\n");
+        //Colocar if em cada um dos casos de erro
+        //torna icones de erros visíveis        
+        if (conjuntoEstados.isEmpty() || simbAlfabeto.isEmpty() || eInicial.isEmpty() || eFinal.isEmpty()
+                || (tamTable > 0 && tabelaTrans.getValueAt(0, 0) == null)) {
+            System.out.println("Faltando entradas!");
+            if (conjuntoEstados.isEmpty()) {
+                erroConjFinais.setVisible(true);
             }
-            arq.close();
-        } catch (IOException ex) {
-            Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
-        }        // TODO add your handling code here:
+                        
+            if(simbAlfabeto.isEmpty()){
+                erroAlfabeto.setVisible(true);
+            }
+            
+            if(eInicial.isEmpty()){
+                erroEInicial.setVisible(true);
+            }
+            
+            if(eFinal.isEmpty()){
+                erroEFinal.setVisible(true);
+            }
+            
+            if(tamTable > 0 && tabelaTrans.getValueAt(0, 0) == null){
+                erroFuncTrans.setVisible(true);
+            }
+            
+        } else {
+
+            fileChooser.setDialogTitle("Specify a file to save");   
+
+            int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                pathFile=fileChooser.getSelectedFile();
+               // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+            }
+
+            FileWriter arq;
+            try {
+                arq = new FileWriter(pathFile, true);
+                PrintWriter gravarArq = new PrintWriter(arq);
+
+                //System.out.println(estadoInicial.getText());
+                //System.out.println(estadoFinal.getText());
+                gravarArq.print(estadoInicial.getText() + "\n");
+
+                gravarArq.print(estadoFinal.getText());
+
+                gravarArq.print("\n_\n%\n\n");
+
+                for (int i = 0; i < model1.getRowCount(); i++) {
+                    for (int j = 0; j < model1.getColumnCount(); j++) {
+                        gravarArq.print(model1.getValueAt(i, j).toString() + ",");
+                    }
+                    gravarArq.print("\n");
+                }
+                arq.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
+            }        // TODO add your handling code here:
+        }
     }//GEN-LAST:event_Turing_salvarBtnMouseClicked
 
     private void Turing_processarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Turing_processarBtnMouseExited

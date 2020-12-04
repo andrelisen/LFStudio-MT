@@ -126,19 +126,12 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="t_a1" min="-2" pref="69" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="t_ei1" min="-2" pref="123" max="-2" attributes="0"/>
-                                                  <Component id="t_ea1" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                                  <Component id="t_ap1" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="t_a1" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
+                                          <Component id="t_ei1" min="-2" pref="123" max="-2" attributes="0"/>
+                                          <Component id="t_ea1" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                          <Component id="t_ap1" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="erroEFinal" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="erroEInicial" alignment="1" min="-2" max="-2" attributes="0"/>
