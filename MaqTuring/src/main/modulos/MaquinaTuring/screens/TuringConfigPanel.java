@@ -98,27 +98,27 @@ public class TuringConfigPanel extends javax.swing.JPanel {
         Pilha_BodyConfig1.setForeground(new java.awt.Color(51, 51, 51));
 
         t_tra1.setBackground(new java.awt.Color(51, 51, 51));
-        t_tra1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_tra1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
         t_tra1.setForeground(new java.awt.Color(255, 255, 255));
-        t_tra1.setText("Funções de Transição");
+        t_tra1.setText("Funções de transições");
 
         t_ea1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ea1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_ea1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
         t_ea1.setForeground(new java.awt.Color(255, 255, 255));
         t_ea1.setText("Estado Inicial");
 
         t_ei1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ei1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_ei1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
         t_ei1.setForeground(new java.awt.Color(255, 255, 255));
-        t_ei1.setText("Estados Finais");
+        t_ei1.setText("Estado Final");
 
         t_ap1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ap1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_ap1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
         t_ap1.setForeground(new java.awt.Color(255, 255, 255));
         t_ap1.setText("Alfabeto");
 
         t_a1.setBackground(new java.awt.Color(51, 51, 51));
-        t_a1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_a1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
         t_a1.setForeground(new java.awt.Color(255, 255, 255));
         t_a1.setText("Estados");
 
@@ -154,6 +154,7 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             }
         });
 
+        tabelaTrans.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         tabelaTrans.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
@@ -208,29 +209,28 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
-                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                                .addComponent(t_tra1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(erroFuncTrans))
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
                                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
-                                        .addComponent(t_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(t_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t_ea1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t_ap1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(t_a1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(t_ea1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(t_ap1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                    .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                        .addComponent(t_ei1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(erroEFinal, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(erroEInicial, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(erroAlfabeto, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(erroConjFinais, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                    .addComponent(erroConjFinais, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(t_tra1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -239,6 +239,8 @@ public class TuringConfigPanel extends javax.swing.JPanel {
                                 .addComponent(conjEstados, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(estadoFinal))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addComponent(erroFuncTrans)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(turing_btn_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(turing_btn_plus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -274,13 +276,13 @@ public class TuringConfigPanel extends javax.swing.JPanel {
                         .addComponent(estadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(erroEFinal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(t_tra1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(turing_btn_minus)
-                            .addComponent(turing_btn_plus)))
-                    .addComponent(erroFuncTrans))
+                            .addComponent(turing_btn_plus))
+                        .addComponent(erroFuncTrans))
+                    .addComponent(t_tra1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                 .addContainerGap())
@@ -309,9 +311,9 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        Pilha_subTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        Pilha_subTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         Pilha_subTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        Pilha_subTitulo.setText("Configuração");
+        Pilha_subTitulo.setText("                  Configuração");
 
         Pilha_ConfigTitulo1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         Pilha_ConfigTitulo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -342,23 +344,27 @@ public class TuringConfigPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Pilha_tituloPilha)
-                        .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(97, 97, 97)
-                            .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Turing_salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Turing_processarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Pilha_tituloPilha)
+                                    .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(15, 15, 15))
+                            .addComponent(Turing_salvarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Turing_processarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Pilha_tituloPilha)
@@ -588,45 +594,28 @@ public class TuringConfigPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Pilha_BodyConfig1;
-    private javax.swing.JPanel Pilha_BodyConfig2;
     private javax.swing.JLabel Pilha_ConfigTitulo1;
     private javax.swing.JLabel Pilha_subTitulo;
     private javax.swing.JLabel Pilha_tituloPilha;
     private javax.swing.JLabel Turing_processarBtn;
     private javax.swing.JLabel Turing_salvarBtn;
-    private javax.swing.JButton afp_button_minus1;
-    private javax.swing.JButton afp_button_plus1;
     private javax.swing.JTextField alfabeto;
-    private javax.swing.JTextField alfabeto1;
     private javax.swing.JTextField conjEstados;
-    private javax.swing.JTextField conjEstados1;
     private javax.swing.JLabel erroAlfabeto;
-    private javax.swing.JLabel erroAlfabeto1;
     private javax.swing.JLabel erroConjFinais;
-    private javax.swing.JLabel erroConjFinais1;
     private javax.swing.JLabel erroEFinal;
     private javax.swing.JLabel erroEInicial;
-    private javax.swing.JLabel erroEInicial1;
     private javax.swing.JLabel erroFuncTrans;
     private javax.swing.JTextField estadoFinal;
-    private javax.swing.JTextField estadoFinal1;
     private javax.swing.JTextField estadoInicial;
-    private javax.swing.JTextField estadoInicial1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel t_a1;
-    private javax.swing.JLabel t_a2;
     private javax.swing.JLabel t_ap1;
-    private javax.swing.JLabel t_ap2;
     private javax.swing.JLabel t_ea1;
-    private javax.swing.JLabel t_ea2;
     private javax.swing.JLabel t_ei1;
-    private javax.swing.JLabel t_ei2;
     private javax.swing.JLabel t_tra1;
-    private javax.swing.JLabel t_tra2;
     private javax.swing.JTable tabelaTrans;
-    private javax.swing.JTable tabelaTrans1;
     private javax.swing.JButton turing_btn_minus;
     private javax.swing.JButton turing_btn_plus;
     // End of variables declaration//GEN-END:variables

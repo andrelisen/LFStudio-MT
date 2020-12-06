@@ -50,29 +50,36 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="Pilha_tituloPilha" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Pilha_subTitulo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                              <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Pilha_tituloPilha" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Pilha_BodyConfig1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Pilha_subTitulo" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="Turing_salvarBtn" alignment="1" min="-2" pref="177" max="-2" attributes="0"/>
+                              <Component id="Turing_processarBtn" alignment="1" min="-2" pref="177" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="Pilha_BodyConfig1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="Turing_salvarBtn" alignment="1" min="-2" pref="177" max="-2" attributes="0"/>
-                      <Component id="Turing_processarBtn" alignment="1" min="-2" pref="177" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="51" max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
                   <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Pilha_tituloPilha" min="-2" max="-2" attributes="0"/>
@@ -116,22 +123,27 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" pref="447" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="461" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="t_tra1" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="erroFuncTrans" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="t_a1" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
-                                          <Component id="t_ei1" min="-2" pref="123" max="-2" attributes="0"/>
-                                          <Component id="t_ea1" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                          <Component id="t_ap1" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="t_a1" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="t_ea1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="t_ap1" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="t_ei1" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="erroEFinal" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="erroEInicial" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -139,6 +151,7 @@
                                           <Component id="erroConjFinais" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="t_tra1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -149,6 +162,8 @@
                                       <Component id="estadoFinal" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
+                                      <Component id="erroFuncTrans" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="turing_btn_minus" min="-2" pref="40" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="turing_btn_plus" min="-2" pref="40" max="-2" attributes="0"/>
@@ -200,15 +215,15 @@
                           <Component id="erroEFinal" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="t_tra1" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="turing_btn_minus" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="turing_btn_plus" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="erroFuncTrans" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="erroFuncTrans" min="-2" max="-2" attributes="0"/>
+                          <Component id="t_tra1" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" pref="133" max="32767" attributes="0"/>
@@ -224,12 +239,12 @@
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Microsoft Yi Baiti" size="20" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Fun&#xe7;&#xf5;es de Transi&#xe7;&#xe3;o"/>
+                <Property name="text" type="java.lang.String" value="Fun&#xe7;&#xf5;es de transi&#xe7;&#xf5;es"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="t_ea1">
@@ -238,7 +253,7 @@
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Microsoft Yi Baiti" size="20" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -252,12 +267,12 @@
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Microsoft Yi Baiti" size="20" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Estados Finais"/>
+                <Property name="text" type="java.lang.String" value="Estado Final"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="t_ap1">
@@ -266,7 +281,7 @@
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Microsoft Yi Baiti" size="20" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -280,7 +295,7 @@
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Microsoft Yi Baiti" size="20" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -328,6 +343,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tabelaTrans">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Ubuntu" size="10" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="1">
                         <Column editable="true" title="Estado atual" type="java.lang.String"/>
@@ -459,12 +477,12 @@
         <Component class="javax.swing.JLabel" name="Pilha_subTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="24" style="1"/>
+              <Font name="Microsoft Yi Baiti" size="22" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="                  Configura&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Pilha_ConfigTitulo1">
