@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="1c" green="1c" red="1c" type="rgb"/>
@@ -274,8 +274,8 @@
                     <Column editable="true" title="Estado atual" type="java.lang.String"/>
                     <Column editable="true" title="S&#xed;mbolo lido" type="java.lang.String"/>
                     <Column editable="true" title="S&#xed;mbolo escrito" type="java.lang.String"/>
-                    <Column editable="true" title="Novo estado" type="java.lang.String"/>
                     <Column editable="true" title="Movimento" type="java.lang.String"/>
+                    <Column editable="true" title="Novo estado" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="autoscrolls" type="boolean" value="false"/>

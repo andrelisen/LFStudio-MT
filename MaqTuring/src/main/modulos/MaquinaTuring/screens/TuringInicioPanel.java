@@ -175,7 +175,8 @@ public class TuringInicioPanel extends javax.swing.JPanel {
             File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
             System.out.println(file);
             
-            TuringProcessamentoPanel.pathFile = file.toString();
+            TuringConfigPanel.pathToFile = file.toString();
+            TuringConfigPanel.config = true;
             LFStudio.cl.show(JanelaExecucao, "turingConfigPanel");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Turing_LabelImportarMaquina4MouseClicked

@@ -118,7 +118,7 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Estado atual", "Símbolo lido", "Símbolo escrito", "Novo estado", "Movimento"
+                "Estado atual", "Símbolo lido", "Símbolo escrito", "Movimento", "Novo estado"
             }
         ) {
             Class[] types = new Class [] {

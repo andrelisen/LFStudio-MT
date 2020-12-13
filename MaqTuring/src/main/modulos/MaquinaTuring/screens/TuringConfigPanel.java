@@ -36,14 +36,15 @@ public class TuringConfigPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
     public DefaultTableModel model1;
     public File pathFile;
-    public static String pathToFile = "/home/mateus/transicoes.txt";
+    public static String pathToFile;
+    public static boolean config=false;
     
     public TuringConfigPanel( javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
         model1 = (DefaultTableModel) tabelaTrans.getModel();
         //torna icones de erros invisíveis
-        MaquinaTuringImport();
+        //MaquinaTuringImport();
         //conj estados = erroConjFinais
         erroConjFinais.setVisible(false);
         //alfabeto = erroAlfabeto
@@ -97,6 +98,27 @@ public class TuringConfigPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(574, 646));
+        jPanel1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jPanel1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jPanel1AncestorMoved(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                jPanel1AncestorRemoved(evt);
+            }
+        });
+        jPanel1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPanel1FocusGained(evt);
+            }
+        });
+        jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jPanel1ComponentShown(evt);
+            }
+        });
 
         Pilha_BodyConfig1.setBackground(new java.awt.Color(28, 28, 28));
         Pilha_BodyConfig1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
@@ -409,8 +431,10 @@ public class TuringConfigPanel extends javax.swing.JPanel {
 		}
         estadoInicial.setText(linha.get(0));
         estadoFinal.setText(linha.get(1));
+        conjEstados.setText(linha.get(4));
+        alfabeto.setText(linha.get(5));
          model1.removeRow(0);
-        for (int i = 5; i < linha.size(); i++) {
+        for (int i = 7; i < linha.size(); i++) {
             String row[] = linha.get(i).split(",");
            
             model1.addRow(new Object[]{
@@ -484,10 +508,10 @@ public class TuringConfigPanel extends javax.swing.JPanel {
                 //System.out.println(estadoInicial.getText());
                 //System.out.println(estadoFinal.getText());
                 gravarArq.print(estadoInicial.getText() + "\n");
-
                 gravarArq.print(estadoFinal.getText());
-
-                gravarArq.print("\n_\n%\n\n");
+                gravarArq.print("\n_\n%\n");
+                gravarArq.print(conjEstados.getText() + "\n");
+                gravarArq.print(alfabeto.getText()+ "\n"+ "\n");
 
                 for (int i = 0; i < model1.getRowCount(); i++) {
                     for (int j = 0; j < model1.getColumnCount(); j++) {
@@ -575,8 +599,9 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             
             gravarArq.print(estadoInicial.getText() + "\n");
             gravarArq.print(estadoFinal.getText());
-            
-            gravarArq.print("\n_\n%\n\n");
+            gravarArq.print("\n_\n%\n");
+                gravarArq.print(conjEstados.getText() + "\n");
+                gravarArq.print(alfabeto.getText()+ "\n"+ "\n");
             
             for(int i=0; i < model1.getRowCount(); i++){
                 for(int j=0; j < model1.getColumnCount(); j++){
@@ -621,6 +646,28 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             model1.removeRow(model1.getRowCount() - 1);
         }
     }//GEN-LAST:event_turing_btn_minusMouseClicked
+
+    private void jPanel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel1FocusGained
+
+    }//GEN-LAST:event_jPanel1FocusGained
+
+    private void jPanel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentShown
+
+    }//GEN-LAST:event_jPanel1ComponentShown
+
+    private void jPanel1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel1AncestorAdded
+       if(config==true){
+           MaquinaTuringImport();
+       }
+    }//GEN-LAST:event_jPanel1AncestorAdded
+
+    private void jPanel1AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel1AncestorMoved
+
+    }//GEN-LAST:event_jPanel1AncestorMoved
+
+    private void jPanel1AncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel1AncestorRemoved
+
+    }//GEN-LAST:event_jPanel1AncestorRemoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
