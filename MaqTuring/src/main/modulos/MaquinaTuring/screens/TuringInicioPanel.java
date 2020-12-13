@@ -176,7 +176,7 @@ public class TuringInicioPanel extends javax.swing.JPanel {
             System.out.println(file);
             
             TuringProcessamentoPanel.pathFile = file.toString();
-            LFStudio.cl.show(JanelaExecucao, "turingProcessamentoPanel");
+            LFStudio.cl.show(JanelaExecucao, "turingConfigPanel");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Turing_LabelImportarMaquina4MouseClicked
 

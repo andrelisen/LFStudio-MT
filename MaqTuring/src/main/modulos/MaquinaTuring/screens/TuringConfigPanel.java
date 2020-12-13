@@ -5,14 +5,17 @@
  */
 package main.modulos.MaquinaTuring.screens;
 
+import java.io.BufferedReader;
 import main.modulos.MaquinaTuring.controllers.TuringController;
 import main.LFStudio;
 import javax.swing.table.DefaultTableModel;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -33,12 +36,14 @@ public class TuringConfigPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
     public DefaultTableModel model1;
     public File pathFile;
+    public static String pathToFile = "/home/mateus/transicoes.txt";
     
     public TuringConfigPanel( javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
         model1 = (DefaultTableModel) tabelaTrans.getModel();
         //torna icones de erros invisíveis
+        MaquinaTuringImport();
         //conj estados = erroConjFinais
         erroConjFinais.setVisible(false);
         //alfabeto = erroAlfabeto
@@ -160,7 +165,7 @@ public class TuringConfigPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Estado atual", "Símbolo lido", "Novo estado", "Símbolo escrito", "Movimento"
+                "Estado atual", "Símbolo lido", "Símbolo escrito", "Novo estado", "Movimento"
             }
         ) {
             Class[] types = new Class [] {
@@ -209,7 +214,7 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
                         .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
@@ -359,12 +364,12 @@ public class TuringConfigPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Pilha_tituloPilha)
@@ -390,7 +395,33 @@ public class TuringConfigPanel extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    private void MaquinaTuringImport(){
+        ArrayList<String> linha = new ArrayList<>();
+        try {
+			FileReader file = new FileReader(pathToFile);
+			BufferedReader br = new BufferedReader(file);
+			while (br.ready()) {
+				linha.add(br.readLine());
+			}
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        estadoInicial.setText(linha.get(0));
+        estadoFinal.setText(linha.get(1));
+         model1.removeRow(0);
+        for (int i = 5; i < linha.size(); i++) {
+            String row[] = linha.get(i).split(",");
+           
+            model1.addRow(new Object[]{
+                row[0],
+                row[1],
+                row[2],
+                row[3],
+                row[4]
+            });
+        }
+    }
     private void Turing_salvarBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Turing_salvarBtnMouseExited
         Turing_salvarBtn.setBackground(Turing_salvarBtn.getBackground().darker().darker());
     }//GEN-LAST:event_Turing_salvarBtnMouseExited
