@@ -240,6 +240,13 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
         palavraReconhecida.setVisible(false);
         palavraNReconhecida.setVisible(false);
         erroPalavra.setVisible(false);
+        
+        //limpar valores da tabela
+        //limpando a tabela da execução
+        if(indexPassoApasso != 0){
+            model1 = (DefaultTableModel) tabelaExec.getModel();
+            model1.setNumRows(0);
+        }
     
         boolean leitura=false,initPassoAPAsso=false;
         Reconhecer maquinadeTuring = new Reconhecer();
